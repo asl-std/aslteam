@@ -254,9 +254,9 @@ const TEAM = {
         "nikname": "NekitSan",
         "positions": ["Администратор сайтов прокта asl"],
         "links": {
-            "vk": "link",
+            "vk": "https://vk.com/tihonn99",
             "inst": "link",
-            "git": "link",
+            "git": "https://github.com/NekitSan",
             "teleg": "link"
         },
         "img": "pers_02.png"
