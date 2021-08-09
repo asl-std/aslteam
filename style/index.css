@@ -349,7 +349,7 @@ main {
       width: auto;
       padding-top: 5px;
       font-size: 18px;
-      font-align: left; }
+      text-align: left; }
       .person__position__item::before {
         content: "*";
         color: #fff;
