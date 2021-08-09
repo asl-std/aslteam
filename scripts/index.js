@@ -233,10 +233,10 @@ const TEAM = {
         "nikname": "Snoop1CattZ69",
         "positions": ["Руководитель прокта", "Основатель команды", "Главный программист"],
         "links": {
-            "vk": "link",
-            "inst": "link",
-            "teleg": "link",
-            "steam": "link"
+            "vk": "https://vk.com/fred_litchenko",
+            "inst": "https://www.instagram.com/snoop1photo/",
+            "teleg": "https://t.me/Snoop1CattZ69",
+            "steam": "https://steamcommunity.com/id/Snoop1CattZ69/"
         },
         "img": "pers_01.png"
     },
