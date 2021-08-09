@@ -249,7 +249,7 @@ main {
       font-size: 24px;
       font-weight: 400; }
     .aboutus__item__position {
-      font-size: 24px;
+      font-size: 18px;
       font-weight: 400; }
   .aboutus__extra--button {
     position: absolute;
@@ -277,11 +277,11 @@ main {
   height: 460px;
   padding: 40px; }
   .review__name {
-    font-size: 48px;
+    font-size: 40px;
     font-weight: 400;
     padding-bottom: 20px; }
   .review__organ {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 400;
     padding-bottom: 20px; }
   .review__descriptrion {
