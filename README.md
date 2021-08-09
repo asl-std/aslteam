@@ -1,1 +1,1 @@
-# aslteam
+# As Second Life Studio
