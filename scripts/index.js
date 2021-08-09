@@ -274,7 +274,7 @@ const TEAM = {
     },
     "pers_04": {
         "nikname": "Rai_Fox",
-        "positions": ["Программист Java", "Программист C++"],
+        "positions": [],
         "links": {
             "vk": "link",
             "inst": "link",
