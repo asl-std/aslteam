@@ -238,7 +238,7 @@ main {
   .aboutus__item {
     position: relative;
     width: 188px;
-    text-align: left; }
+    text-align: center; }
     .aboutus__item__img {
       width: 120px;
       height: 120px;
@@ -250,7 +250,8 @@ main {
       font-weight: 400; }
     .aboutus__item__position {
       font-size: 24px;
-      font-weight: 400; }
+      font-weight: 400;
+      text-align: left ;}
   .aboutus__extra--button {
     position: absolute;
     top: 0;
@@ -274,7 +275,6 @@ main {
 
 .review {
   width: 576px;
-  min-height: 460px;
   height: 460px;
   padding: 40px; }
   .review__name {
@@ -287,6 +287,7 @@ main {
     padding-bottom: 20px; }
   .review__descriptrion {
     text-align: left;
+    height: 240px;
     padding-bottom: 20px; }
   .review__stars {
     padding-bottom: 20px; }
