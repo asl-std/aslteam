@@ -52,7 +52,7 @@ const SERVICE_TEAM = {
                 "imgSrc": "point.png",
                 "tile": "Тематический сервер жанра RPG",
                 "price": "От 25$ до 100$"
-            }
+            },
             "opt4": {
                 "imgSrc": "point.png",
                 "tile": "Тематический сервер жанра по вашему желанию",
