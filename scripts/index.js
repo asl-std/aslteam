@@ -231,7 +231,7 @@ POP_UP.addEventListener("click", (e)=>{
 const TEAM = {
     "pers_01": {
         "nikname": "Snoop1CattZ69",
-        "positions": ["Руководитель прокта", "Основатель команды", "Главный программист"],
+        "positions": ["Основатель команды", "Главный программист"],
         "links": {
             "vk": "https://vk.com/fred_litchenko",
             "inst": "https://www.instagram.com/snoop1photo/",
@@ -242,7 +242,7 @@ const TEAM = {
     },
     "pers_02": {
         "nikname": "NekitSan",
-        "positions": ["Администратор сайтов прокта asl", "Главный web-разработчик", "full-stack developer"],
+        "positions": ["Администратор сайтов прокта asl"],
         "links": {
             "vk": "link",
             "inst": "link",
@@ -253,7 +253,7 @@ const TEAM = {
     },
     "pers_03": {
         "nikname": "Obdolbanius",
-        "positions": ["Заместитель руководителя проекта", "Главный строитель", "Со-основатель"],
+        "positions": ["Заместитель руководителя проекта", "Главный строитель"],
         "links": {
             "vk": "link",
             "inst": "link",
@@ -264,7 +264,7 @@ const TEAM = {
     },
     "pers_04": {
         "nikname": "Rai_Fox",
-        "positions": ["Программист"],
+        "positions": ["Программист Java", "Программист C++"],
         "links": {
             "vk": "link",
             "inst": "link",
@@ -275,7 +275,7 @@ const TEAM = {
     },
     "pers_05": {
         "nikname": "ZiM",
-        "positions": ["Художник"],
+        "positions": ["Художник", "Стример"],
         "links": {
             "vk": "link",
             "inst": "link",
@@ -445,10 +445,10 @@ document.addEventListener("click", (e)=>{
 ;
 
 const REVIEWS = {
-    "rev_01": {"id": 0, "stars": 2},
-    "rev_02": {"id": 1, "stars": 4},
+    "rev_01": {"id": 0, "stars": 5},
+    "rev_02": {"id": 1, "stars": 5},
     "rev_03": {"id": 2, "stars": 5},
-    "rev_04": {"id": 3, "stars": 3}
+    "rev_04": {"id": 3, "stars": 5}
 };
 
 class Stars
