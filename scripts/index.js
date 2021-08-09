@@ -462,7 +462,7 @@ class Stars
         {
             for(let item in REVIEWS)
             {
-                if(item == areaReviews[i].id)
+                if(item == areaReviews[i].dataset.id)
                 {
                     for(let k = 0; k < REVIEWS[item].stars; k++)
                     {
