@@ -66,17 +66,17 @@ const SERVICE_TEAM = {
         "params": {
             "opt1": {
                 "imgSrc": "point.png",
-                "tile": "Один плагин 'Малый'",
+                "tile": "Один плагин Малый",
                 "price": "От 2$ до 5$"
             },
             "opt2": {
                 "imgSrc": "point.png",
-                "tile": "Один плагин 'Средний'",
+                "tile": "Один плагин Средний",
                 "price": "От 7$ до 15$"
             },
             "opt3": {
                 "imgSrc": "point.png",
-                "tile": "Один плагин 'Большой'",
+                "tile": "Один плагин Большой",
                 "price": "От 20$ и выше"
             }
         }
