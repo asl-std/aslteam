@@ -249,9 +249,9 @@ main {
       font-size: 24px;
       font-weight: 400; }
     .aboutus__item__position {
-      font-size: 24px;
+      font-size: 16px;
       font-weight: 400;
-      text-align: left ;}
+      font-color: #7E5BA2 ;}
   .aboutus__extra--button {
     position: absolute;
     top: 0;
@@ -278,7 +278,7 @@ main {
   height: 460px;
   padding: 40px; }
   .review__name {
-    font-size: 48px;
+    font-size: 42px;
     font-weight: 400;
     padding-bottom: 20px; }
   .review__organ {
@@ -287,7 +287,6 @@ main {
     padding-bottom: 20px; }
   .review__descriptrion {
     text-align: left;
-    height: 240px;
     padding-bottom: 20px; }
   .review__stars {
     padding-bottom: 20px; }
@@ -349,7 +348,8 @@ main {
       display: inline-flex;
       width: auto;
       padding-top: 5px;
-      font-size: 24px; }
+      font-size: 18px;
+      font-align: left; }
       .person__position__item::before {
         content: "*";
         color: #fff;
