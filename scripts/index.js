@@ -445,10 +445,12 @@ document.addEventListener("click", (e)=>{
 ;
 
 const REVIEWS = {
-    "rev_01": {"id": 0, "stars": 5},
-    "rev_02": {"id": 1, "stars": 5},
-    "rev_03": {"id": 2, "stars": 5},
-    "rev_04": {"id": 3, "stars": 5}
+    "rev_01": {"id": 0, "stars": 0},
+    "rev_02": {"id": 1, "stars": 1},
+    "rev_03": {"id": 2, "stars": 2},
+    "rev_04": {"id": 3, "stars": 3},
+    "rev_05": {"id": 4, "stars": 4},
+    "rev_06": {"id": 5, "stars": 5}
 };
 
 class Stars
