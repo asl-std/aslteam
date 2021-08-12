@@ -1,14 +1,26 @@
-# As Second Life Studio
-> Update 0.9.0 | 11.08.2021
-- add
+# [As Second Life Studio](https://nekitsan.github.io/aslteam/)
+> Update 0.9.1 | Planned
+- Add
   - edit menu config
-  - edit theme
   - edit currencies
-  - edit lang
-  - adaptived
-- edit
+  - all page in English lang
+  - adaptive for mobile
+- Changed
   - all rating system
+  - edit theme V-1.0
+  - edit lang V-1.0
+  - team member
+  
+> Update 0.9.0 | 12.08.2021
+- Add
+  - edit theme V-0.9
+  - edit lang V-0.9
+  - adaptive
+- Changed
+  - rating system
   - size blocks
+  - text
 
-https://forms.gle/jHn5kCaAPf5wY7sF6
-https://docs.google.com/spreadsheets/d/1fDzNB7ZcDtYMR7bN2Nm7LervUA3mUfBjWxk3gQMAa5o/default/public/values?alt=json
+| upadte name        | data           | 
+| ------------------ |:--------------:| 
+| Update 0.9.0       | 12.08.2021     | 
