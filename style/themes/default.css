@@ -1,0 +1,53 @@
+.wrapper {
+  color: #fff; }
+  .wrapper a {
+    color: #fff; }
+
+main {
+  background-color: #212121; }
+
+.line {
+  background-color: #C4C4C4; }
+
+.header {
+  background-color: #212121; }
+  .header__extra .link__item {
+    background-color: #333; }
+  .header__extra .lang__preview {
+    background-color: #393939; }
+  .header__extra .lang__contr {
+    background-color: #474747; }
+    .header__extra .lang__contr__item {
+      background-color: #393939; }
+
+.menu__link:hover {
+  border-bottom: solid 1px #fff; }
+
+.service__item--circle {
+  border: solid 3px #393939; }
+
+.service__item--rectangle {
+  background-color: #393939; }
+
+.works__item {
+  background-color: #393939; }
+  .works__item:hover {
+    background-color: #545454; }
+
+.person {
+  background-color: #2C2C2C; }
+  .person__position__item::before {
+    color: #fff; }
+
+.service__window {
+  background-color: #393939; }
+
+.footer {
+  background-color: #212121;
+  border-top: solid 1px #C4C4C4; }
+
+.aboutus__extra__icon circle {
+  fill: #2C2C2C; }
+
+.aboutus__extra__icon > path {
+  fill: #848484; }

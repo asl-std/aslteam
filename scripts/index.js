@@ -1,3 +1,29 @@
+let determTheme = document.querySelector("html");
+let setTheme = determTheme.classList;
+let switcherTheme = document.querySelector("#switcherTheme");
+
+choiceTheme(setTheme.value);
+
+//edit theme code...
+document.querySelector(".banner").addEventListener("click", ()=>{
+    setTheme.toggle("theme--white");
+    choiceTheme(setTheme.value);
+});
+
+function choiceTheme(theme)
+{
+    if(theme == "theme--white")
+        joinTheme("white");
+    if(theme == "" || theme == undefined)
+        joinTheme("default");
+}
+
+function joinTheme(name)
+{
+    switcherTheme.href = 'style/themes/' + name + ".css";
+}
+;
+
 class Webp
 {
     eventsAttach()
@@ -28,179 +54,63 @@ class Webp
 const WEBP_TRUE = new Webp();
 WEBP_TRUE.init();;
 
-const LANGS = {
-    "RU": {},
-    "EN": {}
-};;
+let contolLang = {
+    "preview": document.querySelector(".lang__preview"),
+    "contr": document.querySelector(".lang__contr"),
+    "ru": document.querySelector("#ru"),
+    "en": document.querySelector("#en"),
+}
 
-const SERVICE_TEAM = {
-    "serv_01": {
-        "tile": "Создание серверов Minecraft: Java Edition",
-        "description": "Мы занимаемся разработкой серверов разных видов, все сервера делаются с нуля и мы подстраиваем их под ваши нужды. ВАЖНО! Мы не занимаемся разработкой серверов Мини-игр и серверов с модами! Так же мы не работаем с BungeeCord ядрами, только отдельные сервера.",
-        "params": {
-            "opt1": {
-                "imgSrc": "point.png",
-                "tile": "Обычный сервер Survival",
-                "price": "От 5$ до 10$"
-            },
-            "opt2": {
-                "imgSrc": "point.png",
-                "tile": "Расширенный сервер Survival",
-                "price": "От 13$ до 20$"
-            },
-            "opt3": {
-                "imgSrc": "point.png",
-                "tile": "Тематический сервер жанра RPG",
-                "price": "От 25$ до 100$"
-            },
-            "opt4": {
-                "imgSrc": "point.png",
-                "tile": "Тематический сервер жанра по вашему желанию",
-                "price": "От 30$ и выше"
-            }
+function langHeaderAndTile(lang)
+{
+    function getLang(i)
+    {
+        if(lang == "ru")
+        {
+            PAGE_TAGS.header.menu[i].textContent = PAGE_TEXT.header.menu.ru[i];
+            PAGE_TAGS.tile[i].textContent = PAGE_TEXT.header.menu.ru[i];
         }
-    },
-    "serv_02": {
-        "tile": "Разработка плагинов для Minecraft: Java Edition",
-        "description": "Наши умелые разработчики помогут вам решить, как же развлекать игроков, а так же поможем решить технические проблемы, если вдруг вы забыли поставить Essentials! Мы занимаемся разработкой плагинов уже более 5 лет, и мы будем рады помочь вам в создании особого контента на вашем сервере.",
-        "params": {
-            "opt1": {
-                "imgSrc": "point.png",
-                "tile": "Один плагин Малый",
-                "price": "От 2$ до 5$"
-            },
-            "opt2": {
-                "imgSrc": "point.png",
-                "tile": "Один плагин Средний",
-                "price": "От 7$ до 15$"
-            },
-            "opt3": {
-                "imgSrc": "point.png",
-                "tile": "Один плагин Большой",
-                "price": "От 20$ и выше"
-            }
-        }
-    },
-    "serv_03": {
-        "tile": "Постройки в Minecraft: Java Edition",
-        "description": "Наш лучший строитель сможет помочь вывести качество и красоту построек на совершенно новый уровень! Мы обучаем строителей под Европейских топов, мы гарантируем, ваши игроки будут удивлены.",
-        "params": {
-            "opt1": {
-                "imgSrc": "point.png",
-                "tile": "Спавн 100x100",
-                "price": "От 13$"
-            },
-            "opt2": {
-                "imgSrc": "point.png",
-                "tile": "Спавн-остров 100x100",
-                "price": "От 17$"
-            },
-            "opt3": {
-                "imgSrc": "point.png",
-                "tile": "Спавн 200х200",
-                "price": "От 25$"
-            },
-            "opt4": {
-                "imgSrc": "point.png",
-                "tile": "Спавн 200х200",
-                "price": "От 30$"
-            },
-            "opt5": {
-                "imgSrc": "point.png",
-                "tile": "Заполнение территории зданиями",
-                "price": "1$ за чанк"
-            },
-            "opt6": {
-                "imgSrc": "point.png",
-                "tile": "+ Декорирование здания",
-                "price": "2$ за здание"
-            },
-            "opt7": {
-                "imgSrc": "point.png",
-                "tile": "Декорирование территории",
-                "price": "0.5$ за чанк"
-            },
-            "opt8": {
-                "imgSrc": "point.png",
-                "tile": "Арена",
-                "price": "3$ за здание"
-            }
-        }
-    },
-    "serv_04": {
-        "tile": "Обучение программированию",
-        "description": "Всегда мечтал стать программистом ? Делать крутые плагины ? Или может даже выйти на рынок Game-Dev ? Наш главный программист сможет помочь тебе воплотить мечту в реальность! Пару интенсивов, и ты готов творить чудеса на просторах Minecraft Серверов, хочешь больше экстрима ? Тебя обучат азам в Game-Dev: Гейм-дизайну, Дизайну уровней, Написанию истории, Рисованию 2D спрайтов.",
-        "params": {
-            "opt1": {
-                "imgSrc": "point.png",
-                "tile": "Базовое изучение Java",
-                "price": "150 руб/ч"
-            },
-            "opt2": {
-                "imgSrc": "point.png",
-                "tile": "Изучение Spigot/Bukkit API",
-                "price": "250 руб/ч"
-            },
-            "opt3": {
-                "imgSrc": "point.png",
-                "tile": "Углублённое изучение Java",
-                "price": "400 руб/ч"
-            }
-        }
-    },
-    "serv_05": {
-        "tile": "Написание сайта для вас",
-        "description": "Ой... Сейчас тут нет информации, зайдите позже ;)",
-        "params": {
-            "opt1": {
-                "imgSrc": "point.png",
-                "tile": "Услуга не найдена...",
-                "price": "0 руб/ч"
-            }
-        }
-    },
-    "serv_06": {
-        "tile": "Рисование 2D текстур для вас!",
-        "description": "Вы знаете, что в Minecraft можно добавлять предметы без модов ? Нет ? Может вы заинтересованы в этом ? Если так, то мы поможем тебе добавить новые материалы, еду, зелья, оружие, броню, вообще что захочешь! Кроме блоков ;) А наш художник нарисует для тебя те самые текстуры, которые будут использовать твои новые вещи на твоём крутом сервере. Заказы принимаются от 8 текстур. При большом заказе, вы получите скидку!",
-        "params": {
-            "opt1": {
-                "imgSrc": "point.png",
-                "tile": "2D Текстура предмета",
-                "price": "16px - 7руб/шт. 32px - 16руб/шт."
-            },
-            "opt2": {
-                "imgSrc": "point.png",
-                "tile": "Текстура брони",
-                "price": "16px - 45руб/сет. 32px - 100руб/сет."
-            },
-            "opt3": {
-                "imgSrc": "point.png",
-                "tile": "Текстура оружия",
-                "price": "16px - 10руб/шт, 32px - 24руб/шт"
-            },
-            "opt4": {
-                "imgSrc": "point.png",
-                "tile": "Пакет - экипировка 16px",
-                "price": "140 руб./16шт"
-            },
-            "opt5": {
-                "imgSrc": "point.png",
-                "tile": "Пакет - зелья 16px",
-                "price": "200 руб/8 колб"
-            },
-            "opt7": {
-                "imgSrc": "point.png",
-                "tile": "Пакет - еда 16px",
-                "price": "200 руб./16шт"
-            },
-            "opt6": {
-                "imgSrc": "point.png",
-                "tile": "Пакет - комбо 16px",
-                "price": "500руб"
-            }
+        if(lang == "en")
+        {
+            PAGE_TAGS.header.menu[i].textContent = PAGE_TEXT.header.menu.en[i];
+            PAGE_TAGS.tile[i].textContent = PAGE_TEXT.header.menu.en[i]; 
         }
     }
+    
+    for(let i = 0; i < PAGE_TAGS.header.menu.length; i++)
+    {
+        getLang(i)
+    }
 }
+
+contolLang.preview.addEventListener("click", function() {
+    if(contolLang.contr.classList.contains("disable"))
+        contolLang.contr.classList.remove("disable");
+    else
+        contolLang.contr.classList.add("disable");
+});
+
+contolLang.ru.addEventListener("click", function() {
+    contolLang.preview.textContent = this.textContent;
+    contolLang.preview.dataset.lang = this.id;
+
+    contolLang.en.classList.remove("disable")
+    this.classList.add("disable");
+    contolLang.contr.classList.add("disable");
+
+    langHeaderAndTile(this.id);
+});
+contolLang.en.addEventListener("click", function() {
+
+    contolLang.preview.textContent = this.textContent;
+    contolLang.preview.dataset.lang = this.id;
+
+    contolLang.ru.classList.remove("disable")
+    this.classList.add("disable");
+    contolLang.contr.classList.add("disable");
+
+    langHeaderAndTile(this.id);
+});;
 
 const POP_UP = document.querySelector(".pop_up__service");
 class Service
@@ -272,64 +182,6 @@ POP_UP.addEventListener("click", (e)=>{
 
 
 ;
-
-const TEAM = {
-    "pers_01": {
-        "nikname": "Snoop1CattZ69",
-        "positions": ["Основатель команды", "Главный программист"],
-        "links": {
-            "vk": "https://vk.com/fred_litchenko",
-            "inst": "https://www.instagram.com/snoop1photo/",
-            "teleg": "https://t.me/Snoop1CattZ69",
-            "steam": "https://steamcommunity.com/id/Snoop1CattZ69/"
-        },
-        "img": "pers_01.png"
-    },
-    "pers_02": {
-        "nikname": "NekitSan",
-        "positions": ["Администратор сайтов прокта asl"],
-        "links": {
-            "vk": "https://vk.com/tihonn99",
-            "inst": "link",
-            "git": "https://github.com/NekitSan",
-            "teleg": "link"
-        },
-        "img": "pers_02.png"
-    },
-    "pers_03": {
-        "nikname": "Obdolbanius",
-        "positions": ["Заместитель руководителя проекта", "Главный строитель"],
-        "links": {
-            "vk": "link",
-            "inst": "link",
-            "teleg": "link",
-            "steam": "link"
-        },
-        "img": "pers_03.png"
-    },
-    "pers_04": {
-        "nikname": "Rai_Fox",
-        "positions": [],
-        "links": {
-            "vk": "link",
-            "inst": "link",
-            "git": "link",
-            "teleg": "link",
-        },
-        "img": "pers_04.png"
-    },
-    "pers_05": {
-        "nikname": "ZiM",
-        "positions": ["Художник", "Стример"],
-        "links": {
-            "vk": "link",
-            "inst": "link",
-            "steam": "link",
-            "youtube": "link"
-        },
-        "img": "pers_05.png"
-    }
-}
 
 class Person
 {
@@ -416,27 +268,35 @@ class Person
         let getPositions = function()
         {
             let arr = [];
-            for(let i = 0; i < (TEAM[pres_id].positions.length); i++)
+            if(TEAM[pres_id].positions != null)
             {
-                arr += `<li class="person__position__item">${TEAM[pres_id].positions[i]}</li>`;
+                for(let i = 0; i < (TEAM[pres_id].positions.length); i++)
+                {
+                    arr += `<li class="person__position__item">${TEAM[pres_id].positions[i]}</li>`;
+                }
             }
             return arr;
         }
         let getLinks = function()
         {
             let linksSocNetwork = TEAM[pres_id].links;
-            let keysLink = Object.keys(linksSocNetwork)
-            let valueLink = Object.values(linksSocNetwork)
             let arr = [];
-            for(let i = 0; i < keysLink.length; i++)
+
+            if(linksSocNetwork != null)
             {
-                arr += this.defineLink( keysLink[i], valueLink[i] );
+                let keysLink = Object.keys(linksSocNetwork)
+                let valueLink = Object.values(linksSocNetwork)
+                for(let i = 0; i < keysLink.length; i++)
+                {
+                    arr += this.defineLink( keysLink[i], valueLink[i] );
+                }
             }
+            
             return arr;
         }
 
         popUp.innerHTML = `
-        <div class="person__top">
+        <div class="person__top mod--grad">
             <img class="person__top__img" src="images/team/${TEAM[pres_id].img}" alt="Фото члена команды">
             <h3 class="person__top__tile">${TEAM[pres_id].nikname}</h3>
         </div>
@@ -445,8 +305,7 @@ class Person
         </ul>
         <div class="person__links container">
             ${getLinks.bind(this)()}
-        </div>
-        `;
+        </div><div class="person__line--button mod--grad"></div>`;
         
         popUp.classList.toggle("disable");
     }
@@ -464,7 +323,7 @@ AREA_PERSON.addEventListener("click", (e)=>{
             if(!AREA_PERSON.children[i].children[4].classList.contains("disable"))
                 AREA_PERSON.children[i].children[4].classList.add("disable");
         }
-
+    
         if(e.target.length === 0)
         {
             if(!AREA_PERSON.children[i].children[4].classList.contains("disable"))
@@ -488,15 +347,6 @@ document.addEventListener("click", (e)=>{
     }
 });
 ;
-
-const REVIEWS = {
-    "rev_01": {"id": 0, "stars": 0},
-    "rev_02": {"id": 1, "stars": 1},
-    "rev_03": {"id": 2, "stars": 2},
-    "rev_04": {"id": 3, "stars": 3},
-    "rev_05": {"id": 4, "stars": 4},
-    "rev_06": {"id": 5, "stars": 5}
-};
 
 class Stars
 {
