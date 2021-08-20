@@ -54,64 +54,6 @@ class Webp
 const WEBP_TRUE = new Webp();
 WEBP_TRUE.init();;
 
-let contolLang = {
-    "preview": document.querySelector(".lang__preview"),
-    "contr": document.querySelector(".lang__contr"),
-    "ru": document.querySelector("#ru"),
-    "en": document.querySelector("#en"),
-}
-
-function langHeaderAndTile(lang)
-{
-    function getLang(i)
-    {
-        if(lang == "ru")
-        {
-            PAGE_TAGS.header.menu[i].textContent = PAGE_TEXT.header.menu.ru[i];
-            PAGE_TAGS.tile[i].textContent = PAGE_TEXT.header.menu.ru[i];
-        }
-        if(lang == "en")
-        {
-            PAGE_TAGS.header.menu[i].textContent = PAGE_TEXT.header.menu.en[i];
-            PAGE_TAGS.tile[i].textContent = PAGE_TEXT.header.menu.en[i]; 
-        }
-    }
-    
-    for(let i = 0; i < PAGE_TAGS.header.menu.length; i++)
-    {
-        getLang(i)
-    }
-}
-
-contolLang.preview.addEventListener("click", function() {
-    if(contolLang.contr.classList.contains("disable"))
-        contolLang.contr.classList.remove("disable");
-    else
-        contolLang.contr.classList.add("disable");
-});
-
-contolLang.ru.addEventListener("click", function() {
-    contolLang.preview.textContent = this.textContent;
-    contolLang.preview.dataset.lang = this.id;
-
-    contolLang.en.classList.remove("disable")
-    this.classList.add("disable");
-    contolLang.contr.classList.add("disable");
-
-    langHeaderAndTile(this.id);
-});
-contolLang.en.addEventListener("click", function() {
-
-    contolLang.preview.textContent = this.textContent;
-    contolLang.preview.dataset.lang = this.id;
-
-    contolLang.ru.classList.remove("disable")
-    this.classList.add("disable");
-    contolLang.contr.classList.add("disable");
-
-    langHeaderAndTile(this.id);
-});;
-
 const POP_UP = document.querySelector(".pop_up__service");
 class Service
 {
@@ -315,6 +257,12 @@ const PERSON = new Person();
 const AREA_PERSON = document.querySelector(".aboutus__container");
 const EXTRA_WINDOW = document.querySelector(".extra__window");
 
+for(let i = 0; i < AREA_PERSON.children.length; i++ )
+{
+    if( TEAM[AREA_PERSON.children[i].id].positions == null && TEAM[AREA_PERSON.children[i].id].links == null )
+        AREA_PERSON.children[i].children[3].classList.add("disable");
+}
+
 AREA_PERSON.addEventListener("click", (e)=>{ 
     if(e.target.closest(".aboutus__extra--button"))
     {
@@ -346,6 +294,7 @@ document.addEventListener("click", (e)=>{
         }
     }
 });
+
 ;
 
 class Stars
