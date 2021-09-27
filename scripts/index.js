@@ -48,7 +48,7 @@ function setLang()
 /* LANG */
 /* LANG */
 if(localStorage.lang == null || localStorage.lang == undefined)
-    localStorage.lang = (window.navigator.language == undefined) ? "ru" : window.navigator.language;
+    localStorage.lang = (window.navigator.language == undefined) ? "ru" : window.navigator.language.slice(0,2);
 
 // раскрывает\убирает панель
 DATA_LANG.preview.addEventListener("click", () => {
