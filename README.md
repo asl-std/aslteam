@@ -13,7 +13,6 @@
   - button add review
   - page all reviews
 - Changed
-  - add display grid in servise
   - all rating system
   - edit theme V-1.0
   - possibility "write a feedback" V-1.0
