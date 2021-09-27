@@ -370,6 +370,15 @@ main {
 .star__icon--true path {
   fill: #FFC85D; }
 
+.feedback {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999; }
+
 .extra__window {
   position: absolute;
   top: 50px;

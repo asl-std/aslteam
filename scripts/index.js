@@ -48,7 +48,7 @@ function setLang()
 /* LANG */
 /* LANG */
 if(localStorage.lang == null || localStorage.lang == undefined)
-    localStorage.lang = "ru";
+    localStorage.lang = (window.navigator.language == undefined) ? "ru" : window.navigator.language;
 
 // раскрывает\убирает панель
 DATA_LANG.preview.addEventListener("click", () => {
@@ -67,6 +67,7 @@ DATA_LANG.set.addEventListener("click", function(e) {
 
     DATA_LANG.preview.dataset.lang = getCookie("lang");
     DATA_LANG.preview.textContent = getCookie("lang");
+    document.documentElement.lang = getCookie("lang");
 
     DATA_LANG.contr.classList.add("disable");
 
@@ -82,6 +83,7 @@ DATA_LANG.set.addEventListener("click", function(e) {
     DATA_LANG.set.dataset.setLang = temp;
     DATA_LANG.set.textContent = temp;
 
+    document.documentElement.lang = localStorage.lang;
     DATA_LANG.preview.dataset.lang = localStorage.lang;
     DATA_LANG.preview.textContent = localStorage.lang;
 })();
@@ -98,6 +100,11 @@ function bodyLang()
     TAG_FOOTER.right.textContent = setLang().TEXT_FOOTER;
 };
 /* #LANG# */
+
+
+
+                  
+                  
 /* SERVICE */
 /* SERVICE */
 AREA_SERVICE.addEventListener("click", (e)=>{ 
@@ -203,29 +210,58 @@ document.addEventListener("click", (e)=>{
 const DETERM_THEME = document.querySelector("html");
 const SET_THEME = DETERM_THEME.classList;
 const SWITCHER_THEME = document.querySelector("#switcherTheme");
+const VAR_THEME = {"DEF": "default", "WHITE": "theme--white"};
 
-choiceTheme(SET_THEME.value);
+/* SET THEME */
+if(localStorage.theme != null || localStorage.theme != undefined)
+{
+    let themeTemp;
+    themeTemp = localStorage.theme == VAR_THEME.DEF ? VAR_THEME.DEF : VAR_THEME.WHITE;
+
+    console.log(themeTemp, "1");
+    SET_THEME.add(themeTemp);
+    choiceTheme(themeTemp);
+}
+else
+    choiceTheme(VAR_THEME.DEF);
 
 /* THEMES */
 //edit theme code...
-document.querySelector(".banner").addEventListener("click", ()=>{
-    addCoockie("theme", SET_THEME.value);
-    //
-    SET_THEME.toggle("theme--white");
+document.querySelector(".banner").addEventListener("click", () =>
+{
+    let themeTemp, unThemeTemp;
 
-    choiceTheme(SET_THEME.value);
+    if(localStorage.theme != VAR_THEME.WHITE && localStorage.theme != VAR_THEME.DEF)
+        themeTemp = VAR_THEME.WHITE;
+    else
+    {
+        if(localStorage.theme == VAR_THEME.DEF)
+        {
+            themeTemp = VAR_THEME.WHITE;
+            unThemeTemp = localStorage.theme;
+        }
+        else
+        {
+            themeTemp = VAR_THEME.DEF;
+            unThemeTemp = localStorage.theme;
+        }
+    }
 
+    SET_THEME.add(themeTemp);
+    SET_THEME.remove(unThemeTemp);
+
+    localStorage.theme = themeTemp;
+    choiceTheme(themeTemp);
 });
 
 function choiceTheme(theme)
 {
-    if(theme == "theme--white")
+    if(theme == VAR_THEME.WHITE)
         joinTheme("white");
-    if(theme == "" || theme == undefined)
-        joinTheme("default");
+    if(theme == "" || theme == undefined || theme == VAR_THEME.DEF)
+        joinTheme(VAR_THEME.DEF);
 }
 
-// join style
 function joinTheme(name)
 {
     SWITCHER_THEME.href = 'style/themes/' + name + ".css";

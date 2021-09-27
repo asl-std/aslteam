@@ -6,7 +6,7 @@ const DATABASE = {
                 "parametrs": {
                     "name": "Создание сервера",
                     "color": "linear-gradient(180deg, rgb(159, 253, 166), rgb(0, 132, 0));",
-                    "status": null
+                    "status": true
                 },
                 "constet": {
                     "tile": "Создание серверов Minecraft: Java Edition",
@@ -39,7 +39,7 @@ const DATABASE = {
                 "parametrs": {
                     "name": "Плагины Minecraft",
                     "color": "linear-gradient(45deg, #30cfd0, #330867);",
-                    "status": null
+                    "status": true
                 },
                 "constet": {
                     "tile": "Разработка плагинов для Minecraft: Java Edition",
@@ -67,7 +67,7 @@ const DATABASE = {
                 "parametrs": {
                     "name": "Заказ построек в Minecraft",
                     "color": "linear-gradient(180deg, rgb(253, 250, 159), rgb(255, 157, 0));",
-                    "status": null
+                    "status": true
                 },
                 "constet": {
                     "tile": "Постройки в Minecraft: Java Edition",
@@ -120,7 +120,7 @@ const DATABASE = {
                 "parametrs": {
                     "name": "Программное обеспечение",
                     "color": "linear-gradient(180deg, rgb(253, 196, 159), rgb(255, 0, 0));",
-                    "status": null
+                    "status": true
                 },
                 "constet": {
                     "tile": "Обучение программированию",
@@ -148,7 +148,7 @@ const DATABASE = {
                 "parametrs": {
                     "name": "Написание сайта",
                     "color": "linear-gradient(180deg, rgb(232, 185, 255), rgb(255, 83, 242));",
-                    "status": undefined
+                    "status": false
                 },
                 "constet": {
                     "tile": "Написание сайта для вас",
@@ -166,7 +166,7 @@ const DATABASE = {
                 "parametrs": {
                     "name": "Услуги 2D художника",
                     "color": "linear-gradient(45deg, #13547a, #80d0c7);",
-                    "status": null
+                    "status": true
                 },
                 "constet": {
                     "tile": "Рисование 2D текстур для вас!",
@@ -236,7 +236,7 @@ const DATABASE = {
             "pers_02": {
                 "nikname": "NekitSan",
                 "description": "Веб Разработчик",
-                "positions": ["Администратор сайта"],
+                "positions": ["Администратор сайта", "Веб дизайнер"],
                 "links": null,
                 "img": "pers_02.png"
             },
@@ -263,7 +263,8 @@ const DATABASE = {
             }
         },
         "LICENCE_FOOTER": "©2017 — 2021 asl team. Все права защищены",
-        "TEXT_FOOTER": "Присоединяйся к нам"
+        "TEXT_FOOTER": "Присоединяйся к нам",
+        "META_DESCRIPT": "As Second Life Studio - молодая студия разработчиков, интересующаяся всем и вся в IT индустрии, остановились в сфере Game-Dev."
     },
     "en": {
         "MENU": ["Our services", "Our works", "About us", "Reviews"],
@@ -272,7 +273,7 @@ const DATABASE = {
                 "parametrs": {
                     "name": "Создание сервера",
                     "color": "linear-gradient(180deg, rgb(159, 253, 166), rgb(0, 132, 0));",
-                    "status": null
+                    "status": true
                 },
                 "constet": {
                     "tile": "Создание серверов Minecraft: Java Edition",
@@ -305,7 +306,7 @@ const DATABASE = {
                 "parametrs": {
                     "name": "Плагины Minecraft",
                     "color": "linear-gradient(45deg, #30cfd0, #330867);",
-                    "status": null
+                    "status": true
                 },
                 "constet": {
                     "tile": "Разработка плагинов для Minecraft: Java Edition",
@@ -333,7 +334,7 @@ const DATABASE = {
                 "parametrs": {
                     "name": "Заказ построек в Minecraft",
                     "color": "linear-gradient(180deg, rgb(253, 250, 159), rgb(255, 157, 0));",
-                    "status": null
+                    "status": true
                 },
                 "constet": {
                     "tile": "Постройки в Minecraft: Java Edition",
@@ -386,7 +387,7 @@ const DATABASE = {
                 "parametrs": {
                     "name": "Программное обеспечение",
                     "color": "linear-gradient(180deg, rgb(253, 196, 159), rgb(255, 0, 0));",
-                    "status": null
+                    "status": true
                 },
                 "constet": {
                     "tile": "Обучение программированию",
@@ -414,7 +415,7 @@ const DATABASE = {
                 "parametrs": {
                     "name": "Написание сайта",
                     "color": "linear-gradient(180deg, rgb(232, 185, 255), rgb(255, 83, 242));",
-                    "status": null
+                    "status": false
                 },
                 "constet": {
                     "tile": "Написание сайта для вас",
@@ -432,7 +433,7 @@ const DATABASE = {
                 "parametrs": {
                     "name": "Услуги 2D художника",
                     "color": "linear-gradient(45deg, #13547a, #80d0c7);",
-                    "status": null
+                    "status": true
                 },
                 "constet": {
                     "tile": "Рисование 2D текстур для вас!",
@@ -502,7 +503,7 @@ const DATABASE = {
             "pers_02": {
                 "nikname": "NekitSan",
                 "description": "Веб Разработчик",
-                "positions": ["Администратор сайта"],
+                "positions": ["Администратор сайта", "Веб дизайнер"],
                 "links": {
                     "git": "https://github.com/NekitSan",
                 },
@@ -531,7 +532,8 @@ const DATABASE = {
             }
         },
         "LICENCE_FOOTER": "©2017 — 2021 asl team. Все права защищены",
-        "TEXT_FOOTER": "Присоединяйся к нам"
+        "TEXT_FOOTER": "Присоединяйся к нам",
+        "META_DESCRIPT": "As Second Life Studio, un joven estudio de desarrollo interesado en todos y en todo lo relacionado con la industria de TI, se instaló en el área de Game-Dev."
     },
 };
 
@@ -569,18 +571,18 @@ class Service
 {
     servicePreviews()
     {
-        let keysLink = Object.keys(setLang().SERVICE_TEAM);
+        let keysParam = Object.keys(setLang().SERVICE_TEAM);
         let tags = [];
 
-        for( let i = 0; i < keysLink.length; i++ )
+        for( let i = 0; i < keysParam.length; i++ )
         {
-            if(setLang().SERVICE_TEAM[keysLink[i]].parametrs.status == null)
+            if(setLang().SERVICE_TEAM[keysParam[i]].parametrs.status == true)
             {
                 tags += 
-                `<div class="service__item" id="${keysLink[i]}">
-                    <div class="service__item--circle" style="background: ${setLang().SERVICE_TEAM[keysLink[i]].parametrs.color}"></div>
+                `<div class="service__item" id="${keysParam[i]}">
+                    <div class="service__item--circle" style="background: ${setLang().SERVICE_TEAM[keysParam[i]].parametrs.color}"></div>
                     <div class="service__item--rectangle">
-                        <h3 class="service__item__tile">${setLang().SERVICE_TEAM[keysLink[i]].parametrs.name}</h3>
+                        <h3 class="service__item__tile">${setLang().SERVICE_TEAM[keysParam[i]].parametrs.name}</h3>
                         <svg class="service__item__icon_next" width="61" height="16" viewBox="0 0 61 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M8.71429 8L30.5 13L52.2857 8L61 9L30.5 16L0 9L8.71429 8Z" fill="#A8A8A8"/>
                             <path d="M13.5714 0L30 5L46.4286 0L53 1L30 8L7 1L13.5714 0Z" fill="#888888"/>
@@ -593,16 +595,15 @@ class Service
     }
     defineOption(elem)
     {
-        let keysLink = Object.keys(elem);
+        let keysElem = Object.keys(elem);
         let tags = [];
-
-        for( let i = 0; i < keysLink.length; i++ )
+        for( let i = 0; i < keysElem.length; i++ )
         {
             tags += 
             `<div class="service__option">
-                <img src="images/${elem[keysLink[i]].imgSrc}" class="service__option__img">
-                <h5 class="service__option__tile">${elem[keysLink[i]].tile}</h5>
-                <div class="service__option__price">${elem[keysLink[i]].price}</div>
+                <img src="images/${elem[keysElem[i]].imgSrc}" class="service__option__img">
+                <h5 class="service__option__tile">${elem[keysElem[i]].tile}</h5>
+                <div class="service__option__price">${elem[keysElem[i]].price}</div>
             </div>`;
         }
         return tags;

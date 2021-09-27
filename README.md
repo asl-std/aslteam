@@ -5,6 +5,7 @@
   - edit currencies
   - all page in English lang
   - adaptive for mobile
+  - adaptive for service
   - link label
   - normaly system buttons-config
   - ??animations
@@ -14,8 +15,21 @@
 - Changed
   - all rating system
   - edit theme V-1.0
+  - possibility "write a feedback" V-1.0
   - team member
+  
+> Update 0.9.2 | 27.09.2021
+- Add
+  - possibility "write a feedback" V-0.1
+  - edit lang V-2.1
+  - set lang -> param sistem
+  - favicon, description
+- Changed
+  - edit theme V-1.0
   - system output service
+  - tabs feedbacks
+- Delete
+  - buttons themes
   
 > Update 0.9.1 | 01.09.2021
 - Add
@@ -38,5 +52,6 @@
 
 | upadte version     | data           | 
 | ------------------ |:--------------:| 
+| Update 0.9.2       | 27.09.2021     | 
 | Update 0.9.1       | 01.09.2021     | 
 | Update 0.9.0       | 12.08.2021     | 
