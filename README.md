@@ -1,4 +1,4 @@
-# [As Second Life Studio](https://nekitsan.github.io/aslteam/)
+# [As Second Life Studio](https://asl-std.github.io/aslteam/)
 > Update 1.0.0 | Planned
 - Add
   - edit menu config
