@@ -13,7 +13,7 @@
 - Changed
   - rating system +db, +feedback
 
-> Update 0.9.3 | 19.01.2022 --release (without adaptive)
+> Update 0.9.3 | 20.01.2022 --release (without adaptive)
 - Add
   - buttons setting, edit theme, edit lang
   - edit lang V-3.0 --release
@@ -67,7 +67,7 @@
 
 | upadte version     | data           | 
 | ------------------ |:--------------:| 
-| Release Alfa 0.9.3 | 19.01.2022     | 
+| Release Alfa 0.9.3 | 20.01.2022     | 
 | Update 0.9.2       | 27.09.2021     | 
 | Update 0.9.1       | 01.09.2021     | 
 | Update 0.9.0       | 12.08.2021     | 
