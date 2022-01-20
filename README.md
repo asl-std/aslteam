@@ -1,22 +1,37 @@
-# [As Second Life Studio](https://asl-std.github.io/aslteam/)
+# [As Second Life Studio](https://studio.aslcraft.ru)
 > Update 1.0.0 | Planned
 - Add
-  - edit menu config
   - edit currencies
   - all page in English lang
   - adaptive for mobile
   - adaptive for service
-  - link label
-  - normaly system buttons-config
-  - ??animations
+  - animations js + css
   - button up-scroll || fixed menu || all
   - button add review
   - page all reviews
+  - default set lang and theme
 - Changed
-  - all rating system
-  - edit theme V-1.0
-  - possibility "write a feedback" V-1.0
-  - team member
+  - rating system +db, +feedback
+
+> Update 0.9.3 | 19.01.2022 --release (without adaptive)
+- Add
+  - buttons setting, edit theme, edit lang
+  - edit lang V-3.0 --release
+  - edit theme V-3.0 --release
+  - system render content
+  - global code rework
+  - remove unnecessary
+- Changed
+  - DATA BASE
+  - function reviews
+  - function buttons
+  - files system V-1.5
+- Delete
+  - system output content
+  - system output service
+  - rating system
+  - "write a feedback" V-0.1
+  - tabs feedbacks
   
 > Update 0.9.2 | 27.09.2021
 - Add
@@ -52,6 +67,7 @@
 
 | upadte version     | data           | 
 | ------------------ |:--------------:| 
+| Release Alfa 0.9.3 | 19.01.2022     | 
 | Update 0.9.2       | 27.09.2021     | 
 | Update 0.9.1       | 01.09.2021     | 
 | Update 0.9.0       | 12.08.2021     | 
