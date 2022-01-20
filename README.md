@@ -1,4 +1,4 @@
-# [As Second Life Studio](https://studio.aslcraft.ru)
+# [As Second Life Studio](https://asl-std.github.io/aslteam/)
 > Update 1.0.0 | Planned
 - Add
   - edit currencies
