@@ -6,7 +6,7 @@ request.responseType = 'json';
 request.send();
 
 // set lang params
-if(getUrlVars("lang") == "en")
+if(getUrlVars("lang") == "ru" || getUrlVars("lang") == "en")
 {
     let tempSet = getUrlVars("lang");
     let tempDefault = (tempSet == "en") ? "ru" : "en";
