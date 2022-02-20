@@ -8,8 +8,9 @@ request.send();
 // set lang params
 if(getUrlVars("lang") == "en")
 {
-    let tempSet = "en";
+    let tempSet = getUrlVars("lang");
     let tempDefault = "ru";
+    localStorage.lang = getUrlVars("lang");
     setDefaultTheme(tempSet, tempDefault);
 }
 
@@ -18,7 +19,7 @@ if(localStorage.lang == null || localStorage.lang == undefined)
     localStorage.lang = (window.navigator.language == undefined) ? "ru" : window.navigator.language.slice(0,2);
 if(localStorage.lang != null || localStorage.lang != undefined)
 {
-    let tempSet = (localStorage.lang == "ru" || getUrlVars("lang") == "ru") ? "ru" : "en";
+    let tempSet = (localStorage.lang == "ru") ? "ru" : "en";
     let tempDefault = (tempSet == "ru") ? "en" : "ru";
     setDefaultTheme(tempSet, tempDefault);
 }
