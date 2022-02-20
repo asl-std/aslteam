@@ -9,7 +9,7 @@ request.send();
 if(getUrlVars("lang") == "en")
 {
     let tempSet = getUrlVars("lang");
-    let tempDefault = "ru";
+    let tempDefault = (tempSet == "en") ? "ru" : "en";
     localStorage.lang = getUrlVars("lang");
     setDefaultTheme(tempSet, tempDefault);
 }
