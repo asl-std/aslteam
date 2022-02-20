@@ -6,24 +6,21 @@ request.responseType = 'json';
 request.send();
 
 // set lang params
-// if()
-// {
-    
-// }
+if(getUrlVars("lang") == "en")
+{
+    let tempSet = "en";
+    let tempDefault = "ru";
+    setDefaultTheme(tempSet, tempDefault);
+}
 
 // set lang default
 if(localStorage.lang == null || localStorage.lang == undefined)
     localStorage.lang = (window.navigator.language == undefined) ? "ru" : window.navigator.language.slice(0,2);
-if(localStorage.lang != null || localStorage.lang != undefined || getUrlVars("lang") == "en")
+if(localStorage.lang != null || localStorage.lang != undefined)
 {
     let tempSet = (localStorage.lang == "ru" || getUrlVars("lang") == "ru") ? "ru" : "en";
     let tempDefault = (tempSet == "ru") ? "en" : "ru";
-
-    document.querySelector("#lang .setting__preview").textContent = tempSet;
-    document.querySelector("#lang .setting__preview").dataset.lang = tempSet;
-
-    document.querySelector("#list-lang .setting__preview").textContent = tempDefault;
-    document.querySelector("#list-lang .setting__preview").dataset.lang = tempDefault;
+    setDefaultTheme(tempSet, tempDefault);
 }
 
 // set theme default
