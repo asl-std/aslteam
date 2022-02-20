@@ -5,12 +5,18 @@ request.open('GET', requestURL);
 request.responseType = 'json';
 request.send();
 
+// set lang params
+if()
+{
+    
+}
+
 // set lang default
 if(localStorage.lang == null || localStorage.lang == undefined)
     localStorage.lang = (window.navigator.language == undefined) ? "ru" : window.navigator.language.slice(0,2);
-if(localStorage.lang != null || localStorage.lang != undefined)
+if(localStorage.lang != null || localStorage.lang != undefined || getUrlVars("lang") == "en")
 {
-    let tempSet = (localStorage.lang == "ru") ? "ru" : "en";
+    let tempSet = (localStorage.lang == "ru" || getUrlVars("lang") == "ru") ? "ru" : "en";
     let tempDefault = (tempSet == "ru") ? "en" : "ru";
 
     document.querySelector("#lang .setting__preview").textContent = tempSet;
