@@ -6,10 +6,10 @@ request.responseType = 'json';
 request.send();
 
 // set lang params
-if()
-{
+// if()
+// {
     
-}
+// }
 
 // set lang default
 if(localStorage.lang == null || localStorage.lang == undefined)
