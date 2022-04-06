@@ -139,12 +139,16 @@ class renderServices
     {
         document.querySelectorAll(".service__item").forEach(
             item => item.addEventListener("click", () => {
+                document.body.style.overflow = "hidden";
+
+
                 document.querySelector(".pop_up__service").classList.toggle("disable");
-                document.querySelector(".pop_up__service").innerHTML = this.render_description(item.id);
+                document.querySelector(".service__container--scroll").innerHTML = this.render_description(item.id);
 
                 
                 document.querySelector(".service__window--exit").addEventListener("click", () => {
                     document.querySelector(".pop_up__service").classList.add("disable");
+                    document.body.style.overflow = "auto";
                 });
             }) 
         );   
@@ -174,7 +178,7 @@ class renderWorks
             if(data.link)
             {
                 linkIcon = "<div class='works__link--icon'></div>";
-                linkTrue = `href="${data.link}"`;
+                linkTrue = `href="${data.link}" target="_blank"`;
             }
             
             return `
@@ -240,7 +244,7 @@ class renderTeam
             }
             
             return `
-            <div class="aboutus__item" id="${user}">
+            <div class="aboutus__item" id="${user}" data-count="0">
                 <img class="aboutus__item__img" src="images/team/${data.img}" alt="Фотография ${data.nikname}">
                 <h3 class="aboutus__item__nikname">${data.nikname}</h3>
                 <h4 class="aboutus__item__position">${data.description}</h4>
@@ -297,13 +301,38 @@ class renderTeam
         `;
     }
 
-    click_preview()
+
+    click_preview() // Разобраться с кнопкой (чтобы когда и на неё нажимали, убиралось окно)
     {
         document.body.addEventListener("click", (e) => { 
+            // count ставится на нажатый элемент сохраняя прежнее свое знач
             if(e.target.classList.contains("mask__extra--icon"))
             {
-                document.querySelector( "#" + e.target.parentNode.parentNode.id + " .extra__window" ).classList.toggle("disable");
-                document.querySelector( "#" + e.target.parentNode.parentNode.id + " .extra__window" ).innerHTML = this.render_description(e.target.parentNode.parentNode.id);
+                let idEelement = e.target.parentNode.parentNode.id;
+
+                if(document.querySelector( "#" + idEelement ).dataset.count > 0)
+                    document.querySelectorAll(".aboutus__item").forEach(
+                        item => {
+                            if(item != document.querySelector( "#" + idEelement ))
+                            {
+                                item.dataset.count = 0;
+                            }
+                        }
+                    );
+                 
+                document.querySelector( "#" + idEelement ).dataset.count = 1 + Number(document.querySelector( "#" + idEelement ).dataset.count);
+                let count = document.querySelector( "#" + idEelement ).dataset.count;
+
+                if((count % 2) == 0)
+                {
+                    document.querySelector( "#" + idEelement + " .extra__window" ).innerHTML = "";
+                    document.querySelector( "#" + idEelement + " .extra__window" ).classList.add("disable");
+                }
+                if((count % 2) == 1)
+                {
+                    document.querySelector( "#" + idEelement + " .extra__window" ).innerHTML = this.render_description(idEelement);
+                    document.querySelector( "#" + idEelement + " .extra__window" ).classList.remove("disable");
+                }
             }
          });
     }
@@ -372,7 +401,7 @@ function openSetting(event)
             
         path.classList.toggle("disable");
 
-        if(event.parentNode.parentNode.id == "setting")
+        if(event.closest(".setting"))
             if(path.classList.contains("disable"))
                 document.querySelectorAll(".setting--list").forEach( item => { item.classList.add("disable"); });
     }
@@ -458,26 +487,91 @@ const ICONS_NETWORK = {
     "youtube": `<svg width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="15" cy="15" r="15" fill="#F40000"/><path d="M21.535 14.185c0-.291-.049-.63-.049-1.018a67.126 67.126 0 00-.145-1.115c-.097-.388-.242-.68-.533-.922a1.638 1.638 0 00-.922-.436c-1.115-.146-2.763-.194-4.994-.194-2.23 0-3.927.049-4.994.194a1.634 1.634 0 00-.92.436 1.935 1.935 0 00-.534.921c-.097.34-.146.68-.146 1.116-.048.388-.048.727-.048 1.018v2.23c0 .291.048.63.048 1.018.049.388.097.776.146 1.116.097.387.242.678.533.92.243.243.582.389.921.437 1.116.146 2.764.194 4.994.194s3.928-.049 4.994-.194c.34-.048.68-.194.922-.436.242-.243.436-.534.533-.921.097-.34.145-.68.145-1.116.049-.387.049-.727.049-1.018v-2.23zm-4.073 1.503l-3.83 2.376a.37.37 0 01-.243.097c-.097 0-.145 0-.242-.049a.509.509 0 01-.242-.436v-4.8a.51.51 0 01.242-.437.44.44 0 01.485 0l3.83 2.376c.146.097.242.243.242.388 0 .146-.096.388-.242.485z" fill="#fff"/></svg>`
 }
 
+/*
+    # 1. Не пойму почему на некоторых устройствах сколл не опускается до футера
+    # 2. Попробовал покапать в сторону "Переполнение", "координаты элемента", ручками вписывал высоту (впринципе в таком случае работает, НО это хреновый вариант)
+    # 3. Я хз что делать, буду гуглить еще, но тут полюбому дело в разметки, вообще надо лишнее по-вырезать и посмотреть как будет
+*/
+
+ 
 // Open setting
-document.querySelector(".setting").addEventListener("click", (e) => openSetting(e.target));
-// Close 
+document.body.addEventListener("click", (e) => openSetting(e.target));
+
+// set width header
+document.querySelector(".header").style.width = document.querySelector("main").clientWidth + "px";
+
+// Close
 document.body.addEventListener("click", (e) => {
-    if(!e.target.classList.contains("setting__preview"))
+    if(!e.target.closest(".setting"))
         if(!document.querySelector(".setting--list").classList.contains("disable"))
             document.querySelectorAll(".setting--list").forEach( item => { item.classList.add("disable"); });
-    if(!e.target.classList.contains("person--key"))
+
+    if(!e.target.closest(".aboutus__extra--button") || !e.target.closest(".extra__window"))
+        document.querySelectorAll(".aboutus__item").forEach( item => {
+            item.querySelector( ".extra__window" ).classList.add("disable")
+            if(item.dataset.count >= 1)
+                item.dataset.count = 0;
+        });
+        
+    if(document.body.clientWidth > 415)
     {
-        document.querySelectorAll(".aboutus__item").forEach( item => item.querySelector( ".extra__window" ).classList.add("disable") );
-        // for(let k = 0; k < document.querySelector(".aboutus__container").children.length; k++)
-        //     console.log( document.querySelector(".aboutus__container").children[k].querySelector( ".extra__window" ).classList.contains("disable") );
-        // document.querySelectorAll(".aboutus__item").forEach( item => (item.querySelector( ".extra__window" ).classList.contains("disable")) ? null : item.querySelector( ".extra__window" ).classList.add("disable") );
+        document.querySelectorAll(".aboutus__item").forEach(item => {
+            item.querySelector(".extra__window").classList.remove("extra__window--pos_r");
+        });
+    
+        document.querySelectorAll(".aboutus__item").forEach(item => {
+            if(document.body.clientWidth / 2 <= item.getBoundingClientRect().x)
+                item.querySelector(".extra__window").classList.add("extra__window--pos_r");
+            if(document.body.clientWidth / 2 > item.getBoundingClientRect().x)
+                item.querySelector(".extra__window").classList.add("extra__window--pos_l");
+        });
     }
 });
 // Set params
 document.querySelector(".setting").addEventListener("click", (e) => settingSetParams(e.target));
 
+// open/Close menu adaptive
+document.querySelector(".open__list").addEventListener("click", (e) => {
+    document.querySelector(".logo").classList.toggle("disable");
+    document.querySelector(".menu").classList.toggle("disable");
+    document.querySelector(".header__extra").classList.toggle("disable");
+
+    document.querySelector(".header--fixed").style.boxShadow = "0 7px 12px rgba(0, 0, 0, 0.3)";
+});
+
+
+
+// set disable style menu and close menu
+if(document.body.clientWidth <= 1330)
+{
+    document.querySelector(".logo").classList.add("disable");
+    document.querySelector(".menu").classList.add("disable");
+    document.querySelector(".header__extra").classList.add("disable");
+
+    document.body.addEventListener("click", (e) => {
+        if(
+            e.target.closest(".header") == null && 
+            !document.querySelector(".logo").classList.contains("disable") ||
+            e.target.closest(".setting") ||
+            e.target.closest(".menu__item") ||
+            e.target.closest(".link__item") ||
+            e.target.classList.contains("menu__item") ||
+            e.target.classList.contains("link__item")
+        )
+        {
+            document.querySelector(".logo").classList.add("disable");
+            document.querySelector(".menu").classList.add("disable");
+            document.querySelector(".header__extra").classList.add("disable");
+        }
+    });
+}
+
 // Close Pop_up
 document.querySelector(".pop_up__service").addEventListener("click", (e) => {
-    e.target.classList == "pop_up__service" ? e.target.classList.add("disable") : 0;
+    if( e.target.classList == "pop_up__service")
+    {
+        e.target.classList.add("disable");
+        document.body.style.overflow = "auto";
+    }
 });
 

@@ -13,7 +13,6 @@ if(getUrlVars("lang") == "ru" || getUrlVars("lang") == "en")
     localStorage.lang = getUrlVars("lang");
     setDefaultTheme(tempSet, tempDefault);
 }
-
 // set lang default
 if(localStorage.lang == null || localStorage.lang == undefined)
     localStorage.lang = (window.navigator.language == undefined) ? "ru" : window.navigator.language.slice(0,2);
@@ -71,7 +70,3 @@ renderHTML = request.onload = function() {
     const RENDER_REVIEW = new renderReview(DATA[localStorage.lang]);
     RENDER_REVIEW.init();  
 }
-
-// Сделать кнопку extra по другому, фон задать блоком, по центру ставить svg через mask
-// Сделать по другому рендер для тимы
-// Добавить для доп параметра у персоны, нормальное закрытие до окна 

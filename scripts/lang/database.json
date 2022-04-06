@@ -3,7 +3,7 @@
         "CONTENT": {
             "MENU": ["Наши услуги", "Наши работы", "О нас", "Отзывы"],
             "ABOUT_DESCRIPTION": "Мы относительно молодая студия разработчиков, интересующаяся всем и вся в IT индустрии, остановились в сфере Game-Dev, основной состав состоит из 5 человек, всего нас 11 человек. За время работы студии было проделано немало работы в её границах, мы набрались опыта и теперь готовы вас удивлять.",
-            "LICENCE_FOOTER": "©2017 — 2021 asl team. Все права защищены.",
+            "LICENCE_FOOTER": "©2017 — 2022 asl team. Все права защищены.",
             "TEXT_FOOTER": "Присоединяйся к нам"
         },
         "SERVICE_TEAM": {
@@ -186,7 +186,7 @@
         "CONTENT": {
             "MENU": ["Our services", "Our works", "About us", "Reviews"],
             "ABOUT_DESCRIPTION": "We are a relatively young development studio, interested in everything and everyone in the IT industry, settled in Game-Dev, the main team consists of 5 people, there are 11 of us in total. We have gained experience and are now ready to surprise you.",
-            "LICENCE_FOOTER": "©2017 — 2021 asl team. All rights reserved.",
+            "LICENCE_FOOTER": "©2017 — 2022 asl team. All rights reserved.",
             "TEXT_FOOTER": "join us"
         },
         "SERVICE_TEAM": {
