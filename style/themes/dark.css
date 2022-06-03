@@ -1,0 +1,10 @@
+:root {
+   --background-rgba: rgba(0,0,0,.4);
+   --background: #212121;
+   --text: #fff;
+   --intext: #fff;
+   --line: #C4C4C4;
+   --loader: #fff;
+}
+
+alert {display:none!important}

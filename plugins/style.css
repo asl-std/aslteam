@@ -1,0 +1,200 @@
+.plugins-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.plugin-wrap {
+   width: 350px;
+   background: var(--background-rgba);
+   border-radius: 25px;
+   margin: 20px;
+}
+.paid-wrap {
+	border: 2px solid #ef00ff;
+	box-shadow: 0 0 15px #f453ff;
+}
+.free-wrap {
+    border: 2px solid #adadad;
+    box-shadow: 0 0 15px #5c5c5c;
+}
+.plugin-image {
+   position: relative;
+}
+.plugin-image a {
+   display: block;
+}
+.plugin-image img {
+   display: block;
+   width: 100%;
+   border-radius: 25px;
+   padding: 10px;
+}
+.button {
+    text-decoration: none;
+    display: inline-block;
+    padding: 0 12px;
+    background: var(--background);
+    color: var(--text);
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 28px;
+    transition: .3s ease-in;
+}
+.shadow {
+   position: absolute;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   opacity: 0;
+   transition: 0.5s ease-in-out;
+}
+.plugin-wrap:hover .shadow {
+   opacity: 1;
+}
+.actions {
+   bottom: 15px;
+   right: 15px;
+   position: absolute;
+}
+.VK {
+   opacity: 0;
+   visibility: hidden;
+   transform: translate(0, -50px);
+   transition: 1s ease-in-out;
+}
+.actions a {
+   background: #202020;
+    color: #fff;
+    display: block;
+    width: 50px;
+	height: 50px;
+    transition: .3s ease-in-out;
+    text-decoration: none;
+    border-radius: 30px;
+}
+.VK-button:before {
+   content: url('../images/buttons/VK.png');
+}
+.Spigot-button:before {
+	content: url('../images/buttons/Spigot.png');
+}
+.Polymart-button:before {
+   content: url('../images/buttons/Polymart.png');
+}
+.MCMarket-button:before {
+   content: url('../images/buttons/MCMarket.png');
+}
+.GitHub-button:before {
+   content: url('../images/buttons/GitHub.png');
+}
+.actions a:hover {
+   background: #00000000;
+}
+.plugin-wrap:hover .VK {
+   opacity: 1;
+   visibility: visible;
+   transform: translate(0, 0);
+}
+.plugin-wrap:hover .Spigot, .plugin-wrap:hover .Polymart, .plugin-wrap:hover .MCMarket, .plugin-wrap:hover .GitHub {
+   opacity: 1;
+   visibility: visible;
+   transform: translate(0, 0);
+}
+.VK, .Spigot, .Polymart, .MCMarket, .GitHub {
+   opacity: 0;
+   visibility: hidden;
+   transform: translate(0, -50px);
+   transition: .9s ease-in-out;
+   margin: 9px 0 0;
+}
+.plugin-list {
+   margin-top: 20px;
+   padding-bottom: 20px;
+   text-align: center;
+   font-family: 'Open Sans', serif;
+}
+.plugin-list h3 {
+   font-size: 15px;
+   font-family: 'Open Sans', serif;
+}
+.version {
+   font-weight: bold;
+   font-size: 16px;
+   color: #ff7659;
+}
+.plugin-wrap:hover {
+	box-shadow: 0 0 15px #24ff00;
+	border: 2px solid #00ff95;
+}
+.free {
+	color: cyan;
+}
+.paid {
+	background: linear-gradient(-45deg,red,#0f0);
+	animation: hue 2s linear infinite;
+	-webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+@keyframes hue{to{filter:hue-rotate(360deg)}}
+.dropbtn {
+	background-color: #9934db;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    cursor: pointer;
+	border: none;
+    border-radius: 10px;
+	min-width: 115px;
+}
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #29b96a;
+	border-radius: 0;
+	box-shadow: 0 0 6px #29b96a;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+	color: var(--text);
+    position: absolute;
+    background-color: var(--background);
+    overflow: auto;
+    box-shadow: 0 0 6px #29b96a;
+    z-index: 1;
+	min-width: 115px;
+}
+.dropdown-content a {
+    padding: 10px 14px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+}
+.dropdown a:hover {
+	background-color: var(--background-rgba);
+}
+.show {
+	display: block;
+}
+.hide {
+	display: none;
+}
+.desc {
+	color: #fff;
+	text-align: center;
+	bottom: 15px;
+    right: 60px;
+    position: absolute;
+	opacity: 0;
+    visibility: hidden;
+    transform: translate(0, -50px);
+    transition: 1.2s ease-in-out;
+    margin: 0 12px 0 24px;
+}
+.plugin-wrap:hover .desc {
+   opacity: 1;
+   visibility: visible;
+   transform: translate(0, 0);
+}
